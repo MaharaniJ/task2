@@ -1,83 +1,83 @@
 import './App.css';
-import Pricecard from './component/Pricecart';
-function App(){
-  let data = [
-    {
-    plan : "FREE",
-    price : "0",
-    users : "Single User",
-    usersEnabler : true,
-    storage : "5GB Storage",
-    storageEnabler : true,
-   publicproject : "Unlimited Public Projects",
-    publicprojectEnabler : true,
-    communityaccess : "Community Access",
-    communityaccessEnabler : true,
-    privateproject : "Unlimited Private Project",
-    privateprojectEnabler : false,
-    phonesupport : "Dedecated Phone Support",
-    phonesupportEnabler : false,
-    subdomain : "Free Subdomain",
-    subdomainEnabler : false,
-    statusreport : "Monthly Status Report",
-    statusreportEnabler : false 
+import Card from './component/Card';
+function App() {
+  let data = [{
+    plan:"FREE",
+    price:0,
+    user:"Single User",
+    userEnabler:true,
+    storage:"5GB Storage",
+    storageEnabler:true,
+    publicProjects:"Unlimited Public Projects",
+    publicProjectsEnabler:true,
+    communityAccess:"Community Access",
+    communityAccessEnabler:true,
+    privateProjects:"Unlimited Private Projects",
+    privateProjectsEnabler:false,
+    phoneSupport:"Dedicated Phone Support",
+    phoneSupportEnabler:false,
+    subdomain:"Free Subdomain",
+    subDomainEnabler:false,
+    reports:"Monthly Status Reports",
+    reportsEnabler:false
   },
-   {  plan : "PLUS",
-   price : "9",
-   users : "5 User",
-   usersEnabler : true,
-   storage : "50GB Storage",
-   storageEnabler : true,
-  publicproject : "Unlimited Public Projects",
-   publicprojectEnabler : true,
-   communityaccess : "Community Access",
-   communityaccessEnabler : true,
-   privateproject : "Unlimited Private Project",
-   privateprojectEnabler : true,
-   phonesupport : "Dedecated Phone Support",
-   phonesupportEnabler : true,
-   subdomain : "Free Subdomain",
-   subdomainEnabler : true,
-   statusreport : "Monthly Status Report",
-   statusreportEnabler : false 
-   },
-
-    {
-      plan : "PRO",
-      price : "49",
-      users : "Unlimited User",
-      usersEnabler : true,
-      storage : "150GB Storage",
-      storageEnabler : true,
-     publicproject : "Unlimited Public Projects",
-      publicprojectEnabler : true,
-      communityaccess : "Community Access",
-      communityaccessEnabler : true,
-      privateproject : "Unlimited Private Project",
-      privateprojectEnabler : true,
-      phonesupport : "Dedecated Phone Support",
-      phonesupportEnabler : true,
-      subdomain : "Free Subdomain",
-      subdomainEnabler : true,
-      statusreport : "Monthly Status Report",
-      statusreportEnabler : true 
-    
-  }]
-
-
-return <div>
-  <section className='Pricecart py-5'>
-    <div className='container'>
-      <div className='row'>
-        { data.map((e,index) =>{
-           return     <Pricecard data={e} key={index}/>
+  {
+    plan:"PLUS",
+    price:9,
+    user:"5 User",
+    userEnabler:true,
+    storage:"5GB Storage",
+    storageEnabler:true,
+    publicProjects:"Unlimited Public Projects",
+    publicProjectsEnabler:true,
+    communityAccess:"Community Access",
+    communityAccessEnabler:true,
+    privateProjects:"Unlimited Private Projects",
+    privateProjectsEnabler:true,
+    phoneSupport:"Dedicated Phone Support",
+    phoneSupportEnabler:true,
+    subdomain:"Free Subdomain",
+    subDomainEnabler:true,
+    reports:"Monthly Status Reports",
+    reportsEnabler:false
+  },
+  {
+    plan:"PRO",
+    price:49,
+    user:"Unlimited User",
+    userEnabler:true,
+    storage:"150GB Storage",
+    storageEnabler:true,
+    publicProjects:"Unlimited Public Projects",
+    publicProjectsEnabler:true,
+    communityAccess:"Community Access",
+    communityAccessEnabler:true,
+    privateProjects:"Unlimited Private Projects",
+    privateProjectsEnabler:true,
+    phoneSupport:"Dedicated Phone Support",
+    phoneSupportEnabler:true,
+    subdomain:"Free Subdomains",
+    subDomainEnabler:true,
+    reports:"Monthly Status Reports",
+    reportsEnabler:true
+  }  
+]
+  return <>
+      <section className="pricing py-5">
+  <div className="container">
+    <div className="row">
+      {/* <Card card={data[0]}/>
+      <Card card={data[1]}/>
+      <Card card={data[2]}/> */}
+      {
+        data.map((e)=>{
+          return <Card card={e}/>
         })
       }
-        
-      </div>
     </div>
-  </section>
-</div>
-
+  </div>
+</section>
+  </>
 }
+
 export default App;
